@@ -16,7 +16,7 @@ class ButtonImage: UIButton {
         super.init(frame: frame)
         self.addSubview(leftImage)
         print(frame.height)
-        leftImage.frame = CGRect(x: 5, y: (frame.height / 2) - 10, width: 20, height: 20)
+        leftImage.frame = CGRect(x: 5, y: (frame.height / 2), width: 20, height: 20)
         // leftImage.backgroundColor = UIColor.green
         leftImage.image = UIImage(named: "apple_logo")
     }
