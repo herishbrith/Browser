@@ -15,7 +15,8 @@
 		189DA81C1DDDB48A009093D0 /* browserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DA81B1DDDB48A009093D0 /* browserTests.swift */; };
 		189DA8271DDDB48A009093D0 /* browserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DA8261DDDB48A009093D0 /* browserUITests.swift */; };
 		18C78F0F1DDF00A300DD49AE /* ButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C78F0E1DDF00A300DD49AE /* ButtonImage.swift */; };
-		18CADC7E1DE56DDF00D59CE8 /* BlankButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CADC7D1DE56DDF00D59CE8 /* BlankButton.swift */; };
+		18CADC7E1DE56DDF00D59CE8 /*  SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CADC7D1DE56DDF00D59CE8 /*  SubView.swift */; };
+		18CADC801DE5ABF500D59CE8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CADC7F1DE5ABF500D59CE8 /* SecondViewController.swift */; };
 		18E016B81DE2D5080093C16E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E016B71DE2D5080093C16E /* Config.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +52,8 @@
 		189DA8261DDDB48A009093D0 /* browserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = browserUITests.swift; sourceTree = "<group>"; };
 		189DA8281DDDB48A009093D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C78F0E1DDF00A300DD49AE /* ButtonImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonImage.swift; sourceTree = "<group>"; };
-		18CADC7D1DE56DDF00D59CE8 /* BlankButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankButton.swift; sourceTree = "<group>"; };
+		18CADC7D1DE56DDF00D59CE8 /*  SubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " SubView.swift"; sourceTree = "<group>"; };
+		18CADC7F1DE5ABF500D59CE8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		18E016B71DE2D5080093C16E /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +108,9 @@
 				18E016B61DE2D4FC0093C16E /* Config */,
 				189DA8061DDDB489009093D0 /* AppDelegate.swift */,
 				189DA8081DDDB489009093D0 /* ViewController.swift */,
+				18CADC7F1DE5ABF500D59CE8 /* SecondViewController.swift */,
 				18C78F0E1DDF00A300DD49AE /* ButtonImage.swift */,
-				18CADC7D1DE56DDF00D59CE8 /* BlankButton.swift */,
+				18CADC7D1DE56DDF00D59CE8 /*  SubView.swift */,
 				189DA80A1DDDB489009093D0 /* Main.storyboard */,
 				189DA80D1DDDB489009093D0 /* Assets.xcassets */,
 				189DA80F1DDDB489009093D0 /* LaunchScreen.storyboard */,
@@ -276,8 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CADC801DE5ABF500D59CE8 /* SecondViewController.swift in Sources */,
 				189DA8091DDDB489009093D0 /* ViewController.swift in Sources */,
-				18CADC7E1DE56DDF00D59CE8 /* BlankButton.swift in Sources */,
+				18CADC7E1DE56DDF00D59CE8 /*  SubView.swift in Sources */,
 				18E016B81DE2D5080093C16E /* Config.swift in Sources */,
 				18C78F0F1DDF00A300DD49AE /* ButtonImage.swift in Sources */,
 				189DA8071DDDB489009093D0 /* AppDelegate.swift in Sources */,
