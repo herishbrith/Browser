@@ -17,7 +17,7 @@ class SecondViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - label2Width) / 2, y: 200), size: CGSize(width: label2Width, height: label2Height))
-        self.view.addSubview(nameLabel)
+//        nameLabel.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - label2Width) / 2, y: 200), size: CGSize(width: label2Width, height: label2Height))
+//        self.view.addSubview(nameLabel)
     }
 }

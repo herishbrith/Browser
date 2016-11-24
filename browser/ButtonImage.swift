@@ -9,14 +9,16 @@
 import UIKit
 
 class ButtonImage: UIButton {
-    
+
+    let leftImageHeight: CGFloat = 20
+    let leftImageWidth: CGFloat = 20
     let leftImage = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(leftImage)
         print(frame.height)
-        leftImage.frame = CGRect(x: 5, y: (frame.height / 2), width: 20, height: 20)
+        leftImage.frame = CGRect(x: 5, y: (frame.height - leftImageHeight) / 2, width: leftImageWidth, height: leftImageHeight)
         // leftImage.backgroundColor = UIColor.green
         leftImage.image = UIImage(named: "apple_logo")
     }

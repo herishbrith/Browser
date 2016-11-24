@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var browserNameLabel: UILabel!
 //    @IBOutlet weak var addressBar: UITextField!
 //    @IBOutlet weak var historySwitch: UISwitch!
+    let navBarHeight: CGFloat = 50
     let btnWidth: CGFloat = 200
     let btnHeight: CGFloat = 50
     let textBoxWidth: CGFloat = 250
@@ -26,12 +27,14 @@ class ViewController: UIViewController {
     let imageHeight: CGFloat = 50
     let labelWidth: CGFloat = 150
     let labelHeight: CGFloat = 25
+    let navBar = UINavigationBar()
+    let navItem = UINavigationItem(title: "Browser")
     let textBox = UITextView()
-    let btn = ButtonImage()
+    var btn: ButtonImage!
     let btn2 = UIButton()
     let slider = UISlider()
     let label = UILabel()
-//    let subView = SubView()
+    var subView: SubView!
 //    let image = UIImageView()
     var tapCounter: Int = 0
 
@@ -39,13 +42,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        btn.frame = CGRect(origin: CGPoint(x: self.view.frame.width / 2 - (btnWidth / 2), y: self.view.frame.height / 2 - btnHeight / 2), size: CGSize(width: btnWidth, height: btnHeight))
+        navBar.frame = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: CGSize(width: self.view.frame.width, height: navBarHeight))
+        btn = ButtonImage(frame: CGRect(origin: CGPoint(x: (self.view.frame.width - btnWidth) / 2, y: (self.view.frame.height - btnHeight) / 2), size: CGSize(width: btnWidth, height: btnHeight)))
         textBox.frame = CGRect(origin: CGPoint(x: self.view.frame.width / 2 - textBoxWidth / 2, y: self.view.frame.height / 2 - btnHeight * 2), size: CGSize(width: textBoxWidth, height: textBoxHeight))
         label.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - labelWidth) / 2, y: textBox.frame.origin.y - labelHeight), size: CGSize(width: labelWidth, height: labelHeight))
         slider.frame = CGRect(origin: CGPoint(x: self.view.frame.width / 2 - sliderWidth / 2, y: self.view.frame.height / 2 + sliderHeight * 2), size: CGSize(width: sliderWidth, height: sliderHeight))
         btn2.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - btnWidth) / 2, y: slider.frame.origin.y + btnHeight), size: CGSize(width: btnWidth, height: btnHeight))
-        let subView = SubView(frame: CGRect(x: subViewMargins, y: self.view.frame.height - subViewHeight, width: self.view.frame.width - subViewMargins * 2, height: subViewHeight - subViewMargins))
+        subView = SubView(frame: CGRect(x: subViewMargins, y: self.view.frame.height - subViewHeight, width: self.view.frame.width - subViewMargins * 2, height: subViewHeight - subViewMargins))
 
+        textBox.layer.borderWidth = 2.0
+        textBox.layer.borderColor = UIColor.blue.cgColor
+        self.view.addSubview(navBar)
         self.view.addSubview(label)
         self.view.addSubview(textBox)
         self.view.addSubview(btn)
@@ -53,10 +60,11 @@ class ViewController: UIViewController {
         self.view.addSubview(btn2)
         self.view.addSubview(subView)
 
-        self.view.backgroundColor = UIColor.orange
+        self.view.backgroundColor = UIColor(white: 2.0, alpha: 0.5)
         self.label.text = "Enter your name"
+        navBar.setItems([navItem], animated: false)
         subView.backgroundColor = UIColor.cyan
-        subView.alpha = 0.5
+//        subView.alpha = 0.5
         slider.minimumValue = 0
         slider.maximumValue = 10
         slider.isContinuous = true
@@ -76,13 +84,15 @@ class ViewController: UIViewController {
     }
 
     func buttonClicked(sender: UITapGestureRecognizer) {
-        print(self.textBox.text)
+//        print(self.textBox.text)
         tapCounter += 1
         if let myBtn = sender.view as? ButtonImage {
             if tapCounter % 2 == 1 {
-                myBtn.leftImage.image = UIImage(named: "orange")
+                myBtn.leftImage.image = UIImage(named: "facebook_logo")
+                subView.image.image = UIImage(named: "apple_logo")
             } else {
                 myBtn.leftImage.image = UIImage(named: "apple_logo")
+                subView.image.image = UIImage(named: "facebook_logo")
             }
         }
         print("Length of string is \(self.textBox.text.characters.count)")
@@ -91,14 +101,14 @@ class ViewController: UIViewController {
     }
     
     func screenChange(sender: UITapGestureRecognizer) {
-        print(sender)
+//        print(sender)
         let secondViewController: SecondViewController = SecondViewController()
         self.present(secondViewController, animated: true, completion: nil)
     }
     
     func slided(sender: UISlider){
         if sender.value < 1 {
-            btn.backgroundColor = UIColor.green
+            btn.backgroundColor = UIColor(red: 1.0, green: 0.25, blue: 0.80, alpha: 0.25)
             btn.setTitleColor(UIColor.red, for: .normal)
         } else if sender.value < 2 {
             btn.backgroundColor = UIColor.white
