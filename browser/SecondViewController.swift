@@ -31,4 +31,13 @@ class SecondViewController: UIViewController {
     func goBack(sender: AnyObject? = nil) {
         self.navigationController?.popViewController(animated: false)
     }
+    
+    init(data: Dictionary<String,AnyObject>){
+        super.init(nibName: nil, bundle: nil)
+        print(data["message"])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

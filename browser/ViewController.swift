@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         self.view.addSubview(slider1)
         self.view.addSubview(slider2)
         self.view.addSubview(slider3)
-       self.view.addSubview(btn2)
+        self.view.addSubview(btn2)
         self.view.addSubview(subView)
 
         self.view.backgroundColor = UIColor(white: 2.0, alpha: 0.5)
@@ -134,8 +134,9 @@ class ViewController: UIViewController {
 //        print(sender)
 //        let secondViewController: SecondViewController = SecondViewController()
 //        self.present(secondViewController, animated: true, completion: nil)
-        self.navigationController?.pushViewController(SecondViewController(), animated: true)
-        
+        var data:Dictionary<String,AnyObject> = Dictionary<String,AnyObject>()
+        data["message"] = self.textBox.text as AnyObject?
+        self.navigationController?.pushViewController(SecondViewController(data: data), animated: true)
     }
     
     func slided(sender: UISlider){
