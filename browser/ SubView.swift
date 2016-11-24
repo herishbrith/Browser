@@ -18,7 +18,7 @@ class SubView: UIView {
         super.init(frame: frame)
         image.frame = CGRect(x: (frame.width - imageWidth) / 2, y: (frame.height - imageHeight) / 2, width: imageWidth, height: imageHeight)
         self.addSubview(image)
-        image.image = UIImage(named: "apple_logo")
+        image.image = UIImage(named: "facebook_logo")
     }
     
     required init?(coder aDecoder: NSCoder) {
