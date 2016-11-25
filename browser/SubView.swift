@@ -9,7 +9,7 @@
 import UIKit
 
 class SubView: UIView {
-
+    
     let imageWidth: CGFloat = 50
     let imageHeight: CGFloat = 50
     let image = UIImageView()

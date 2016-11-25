@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class SecondViewController: UIViewController {
-
+    
     let label2Width: CGFloat = 150
     let label2Height: CGFloat = 25
     let nameLabel = UILabel()
     let backBtn = UIButton()
     
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor.orange
         nameLabel.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - label2Width) / 2, y: 200), size: CGSize(width: label2Width, height: label2Height))
         self.view.addSubview(nameLabel)

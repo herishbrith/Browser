@@ -9,7 +9,7 @@
 import UIKit
 
 class ButtonImage: UIButton {
-
+    
     let leftImageHeight: CGFloat = 20
     let leftImageWidth: CGFloat = 20
     let leftImage = UIImageView()
@@ -17,12 +17,12 @@ class ButtonImage: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(leftImage)
-//        print(frame.height)
+        //        print(frame.height)
         leftImage.frame = CGRect(x: 5, y: (frame.height - leftImageHeight) / 2, width: leftImageWidth, height: leftImageHeight)
-//        leftImage.backgroundColor = UIColor.green
+        //        leftImage.backgroundColor = UIColor.green
         leftImage.image = UIImage(named: "apple_logo")
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
