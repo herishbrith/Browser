@@ -134,8 +134,8 @@ class ViewController: UIViewController {
         //        print(sender)
         //        let secondViewController: SecondViewController = SecondViewController()
         //        self.present(secondViewController, animated: true, completion: nil)
-        var data:Dictionary<String,AnyObject> = Dictionary<String,AnyObject>()
-        data["message"] = self.textBox.text as AnyObject?
+        var data: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        data["message"] = self.textBox.text as String? as AnyObject?
         self.navigationController?.pushViewController(SecondViewController(data: data), animated: true)
     }
     

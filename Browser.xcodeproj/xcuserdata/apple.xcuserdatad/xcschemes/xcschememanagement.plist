@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>browser.xcscheme</key>
+		<key>Browser.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>189DA8021DDDB489009093D0</key>
+		<key>18CC35D61DE8313400FA243D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>189DA8161DDDB48A009093D0</key>
+		<key>18CC35ED1DE8313400FA243D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>189DA8211DDDB48A009093D0</key>
+		<key>18CC35F81DE8313400FA243D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

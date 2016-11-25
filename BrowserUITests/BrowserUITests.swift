@@ -1,14 +1,14 @@
 //
-//  browserUITests.swift
-//  browserUITests
+//  BrowserUITests.swift
+//  BrowserUITests
 //
-//  Created by Apple on 17/11/16.
+//  Created by Apple on 25/11/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 
 import XCTest
 
-class browserUITests: XCTestCase {
+class BrowserUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

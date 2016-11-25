@@ -40,6 +40,8 @@ class SecondViewController: UIViewController {
     
     init(data: Dictionary<String,AnyObject>){
         super.init(nibName: nil, bundle: nil)
+        let details: Dictionary<String, String> = Dictionary<String, String>()
+//        details["entityName"] = ""
         print(data["message"])
     }
     

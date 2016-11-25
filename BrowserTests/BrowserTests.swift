@@ -1,15 +1,15 @@
 //
-//  browserTests.swift
-//  browserTests
+//  BrowserTests.swift
+//  BrowserTests
 //
-//  Created by Apple on 17/11/16.
+//  Created by Apple on 25/11/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 
 import XCTest
-@testable import browser
+@testable import Browser
 
-class browserTests: XCTestCase {
+class BrowserTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
