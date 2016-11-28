@@ -525,6 +525,7 @@
 				18CC36041DE8313400FA243D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CC36051DE8313400FA243D /* Build configuration list for PBXNativeTarget "BrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +534,7 @@
 				18CC36071DE8313400FA243D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CC36081DE8313400FA243D /* Build configuration list for PBXNativeTarget "BrowserUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +543,7 @@
 				18CC360A1DE8313400FA243D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
