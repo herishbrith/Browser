@@ -15,7 +15,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     let label2Height: CGFloat = 25
     let nameLabel = UILabel()
     let backBtn = UIButton()
-    var userData = ["A", "B"]
+    var itemsToLoad = ["A", "B"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         let tableView = UITableView(frame: view.bounds, style: UITableViewStyle.grouped)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         self.view.addSubview(tableView)
         self.view.backgroundColor = UIColor.orange
 //        nameLabel.frame = CGRect(origin: CGPoint(x: (self.view.frame.width - label2Width) / 2, y: 200), size: CGSize(width: label2Width, height: label2Height))
@@ -35,23 +36,23 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userData.count;
+        return itemsToLoad.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        cell.textLabel?.text = self.userData[indexPath.row]
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath as IndexPath)
+        cell.textLabel?.text = self.itemsToLoad[indexPath.row]
         return cell
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("User selected table row \(indexPath.row) and item \(itemsToLoad[indexPath.row])")
     }
 
 //    func goBack(sender: AnyObject? = nil) {
 //        self.navigationController?.popViewController(animated: false)
 //    }
-    
+
     init(data: Dictionary<String,AnyObject>){
         super.init(nibName: nil, bundle: nil)
         let databaseHandler = DatabaseHandler()
