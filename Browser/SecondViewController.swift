@@ -41,6 +41,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath as IndexPath)
+        print(indexPath.row)
         cell.textLabel?.text = self.itemsToLoad[indexPath.row]
         return cell
     }
@@ -64,7 +65,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         }
         let userData = databaseHandler.getData()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE, dd MMM yyy hh:mm:ss +zzzz"
+        dateFormatter.dateFormat = "EEE, dd MMM yyy hh:mm:ss"
         
         for datum in userData {
             if let name = datum.value(forKey: "name") as? String {
