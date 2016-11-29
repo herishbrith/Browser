@@ -16,9 +16,15 @@ class DatabaseHandler {
         return appDelegate.persistentContainer.viewContext
     }
 
-    func storeData (entityName: String, propertyName: String, value: String) {
+    func storeData (entityName: String, propertyName: String, value: AnyObject) {
+        var value = value
         let context = getContext()
-        print(entityName)
+
+        if entityName == "name" {
+            value = value as! String as AnyObject
+        } else if entityName == "date" {
+            value = value as! Date as AnyObject
+        }
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         let userData = NSManagedObject(entity: entity!, insertInto: context)
         userData.setValue(value, forKey: propertyName)
@@ -31,15 +37,36 @@ class DatabaseHandler {
         }
     }
 
-    func getData () {
+    func getData () -> [NSManagedObject] {
         let context = getContext()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         let entityDesc = NSEntityDescription.entity(forEntityName: "UserData", in: context)
         fetchRequest.entity = entityDesc
+        var result = [NSManagedObject]()
 
         do {
-            let result = try context.fetch(fetchRequest)
-            print(result)
+            let records = try context.fetch(fetchRequest)
+            
+            if let records = records as? [NSManagedObject] {
+                result = records
+            }
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        return result
+    }
+    
+    func deleteData () {
+        let context = getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        let entityDesc = NSEntityDescription.entity(forEntityName: "UserData", in: context)
+        fetchRequest.entity = entityDesc
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            
         } catch {
             let fetchError = error as NSError
             print(fetchError)
