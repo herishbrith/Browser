@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         self.view.addSubview(btn2)
         self.view.addSubview(subView)
         
-        self.view.backgroundColor = UIColor(white: 2.0, alpha: 0.5)
+        self.view.backgroundColor = UIColor(red: 0.88, green: 0.96, blue: 0.98, alpha: 1.0)
         self.label.text = "Enter your name"
         //navBar.setItems([navItem], animated: false)
         subView.layer.cornerRadius = 5.0
@@ -201,6 +201,7 @@ class ViewController: UIViewController {
     
     func determineContrast(color: UIColor) -> UIColor {
         let colorArray = color.cgColor.components!
+//        print(colorArray)
         return UIColor(red: 1.0 - colorArray[0], green: 1.0 - colorArray[1], blue: 1.0 - colorArray[2], alpha: 1.0)
     }
     

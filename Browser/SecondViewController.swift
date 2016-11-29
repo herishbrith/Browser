@@ -65,7 +65,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         }
         let userData = databaseHandler.getData()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE, dd MMM yyy hh:mm:ss"
+        dateFormatter.dateFormat = "EEE, dd MMM yyy hh:mm"
         
         for datum in userData {
             if let name = datum.value(forKey: "name") as? String {
